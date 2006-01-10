@@ -1,0 +1,3 @@
+[% USE encoding 'euc-jp' -%]
+わたしの名前は [% author %] です。
+encoding=[% encoding %]

@@ -1,0 +1,3 @@
+[% USE encoding 'utf-8' -%]
+わたしの名前は [% author %] です。
+encoding=[% encoding %]
