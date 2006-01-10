@@ -8,3 +8,4 @@ t/01_unicode.t
 t/euc-jp.tt
 t/utf-8-wo-encoding.tt
 t/utf-8.tt
+META.yml                                 Module meta-data (added by MakeMaker)
