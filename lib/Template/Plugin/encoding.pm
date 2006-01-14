@@ -1,6 +1,8 @@
 package Template::Plugin::encoding;
 use base qw( Template::Plugin );
 
+our $VERSION = '0.02';
+
 sub new {
     my $class = shift;
     my $contetx = shift;
