@@ -1,6 +1,6 @@
 Revision history for Perl extension Template::Provider::Encoding
 
-0.02
+0.02  Sat Jan 14 15:01:49 UTC 2006
         - Added Template::Stash::ForceUTF8 and now this module works magically
           (you can mix Unicode flagged and UTF-8 bytes in stash!)
         - Now no_unicode mode is unnecessary since we have magical stash

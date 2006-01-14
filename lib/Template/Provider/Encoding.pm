@@ -62,7 +62,7 @@ plugin. Otherwise the template is handled as utf-8.
 
 =head2 UNICODE option and BOM
 
-Recnet TT allows C<UNICODE> option to Template::Provider and by adding
+Recent TT allows C<UNICODE> option to Template::Provider and by adding
 it Provider scans BOM (byte-order mark) to detect UTF-8/UTF-16 encoded
 template files. This module does basically the same thing in a
 different way, but IMHO adding BOM to template files is a little
@@ -75,9 +75,9 @@ Template file encodings and output the template into various
 encodings.
 
 This module doesn't touch output encoding of the template and instead
-it emits valid Unicode flagged string (or UTF-8 bytes in no-unicode
-mode). I think the output encoding conversion should be done by other
-piece of code, especially in the framework.
+it emits valid Unicode flagged string. I think the output encoding
+conversion should be done by other piece of code, especially in the
+framework.
 
 This module doesn't require you to specify encoding in the code, nor
 doesn't I<guess> encodings. Instead it forces you to put C<< [% USE
