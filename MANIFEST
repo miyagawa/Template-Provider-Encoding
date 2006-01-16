@@ -7,6 +7,7 @@ MANIFEST			This list of files
 META.yml			Module meta-data (added by MakeMaker)
 t/00_compile.t
 t/01_unicode.t
+t/02_obj.t
 t/euc-jp.tt
 t/utf-8-wo-encoding.tt
 t/utf-8.tt
