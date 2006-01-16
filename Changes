@@ -1,5 +1,9 @@
 Revision history for Perl extension Template::Provider::Encoding
 
+0.03  2006-01-16T22:38:37Z
+        - Use $Template::Stash::Config as a base class to support
+          XS based object variable correctly
+
 0.02  Sat Jan 14 15:01:49 UTC 2006
         - Added Template::Stash::ForceUTF8 and now this module works magically
           (you can mix Unicode flagged and UTF-8 bytes in stash!)

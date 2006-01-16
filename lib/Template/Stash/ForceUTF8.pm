@@ -1,9 +1,10 @@
 package Template::Stash::ForceUTF8;
 
 use strict;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
-use base qw( Template::Stash );
+use Template::Config;
+use base ( $Template::Config::STASH );
 use Encode;
 
 sub get {
