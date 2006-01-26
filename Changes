@@ -1,5 +1,9 @@
 Revision history for Perl extension Template::Provider::Encoding
 
+0.04  2006-01-26T18:50:22Z
+        - Do nothing when template is BOMed
+          (Thanks to Bill Moseley)
+
 0.03  2006-01-16T22:38:37Z
         - Use $Template::Stash::Config as a base class to support
           XS based object variable correctly

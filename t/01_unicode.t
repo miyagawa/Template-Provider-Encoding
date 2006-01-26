@@ -6,7 +6,7 @@ use Template::Provider::Encoding;
 use Template::Stash::ForceUTF8;
 use Template;
 
-my @files = qw( euc-jp.tt utf-8.tt utf-8-wo-encoding.tt );
+my @files = qw( euc-jp.tt utf-8.tt utf-8-wo-encoding.tt utf-8-bom.tt );
 
 my $author = "\x{5bae}\x{5ddd}"; # miyagawa
 my $place  = "\x{6771}\x{4eac}"; # Tokyo
@@ -25,7 +25,7 @@ for my $file (@files) {
     ok Encode::is_utf8($out), "$file output is utf-8 flagged";
     like $out, qr/$author/, "$file includes author name correctly";
     like $out, qr/$place/, "$file includes place correctly";
-    unless ($file =~ /-wo-/) {
+    unless ($file =~ /(-wo-|-bom)/) {
         my $encoding = ($file =~ /(.*)\.tt/)[0];
         like $out, qr/encoding=$encoding/, "$file has encoding $encoding";
     }
@@ -45,7 +45,7 @@ for my $file (@files) {
     ok Encode::is_utf8($out), "$file output is utf-8 flagged";
     like $out, qr/$author/, "$file includes author name correctly";
     like $out, qr/$place/, "$file includes place correctly";
-    unless ($file =~ /-wo-/) {
+    unless ($file =~ /(-wo-|-bom)/) {
         my $encoding = ($file =~ /(.*)\.tt/)[0];
         like $out, qr/encoding=$encoding/, "$file has encoding $encoding";
     }
