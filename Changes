@@ -1,5 +1,8 @@
 Revision history for Perl extension Template::Provider::Encoding
 
+0.05  2006-02-05T01:10:24Z
+        - Packaging bug caused test errors
+
 0.04  2006-01-26T18:50:22Z
         - Do nothing when template is BOMed
           (Thanks to Bill Moseley)
