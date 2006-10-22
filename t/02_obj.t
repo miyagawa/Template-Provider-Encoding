@@ -4,14 +4,16 @@ use Test::More;
 eval { require DateTime; 1 };
 if ($@) {
     plan skip_all => 'require DateTime';
-} else {
-    plan tests => 1;
 }
-
-package main;
 
 use Template;
 use Template::Stash::ForceUTF8;
+
+if ($Template::Config::STASH ne 'Template::Stash::XS') {
+    plan skip_all => 'require Template::Stash::XS';
+}
+
+plan tests => 1;
 
 my $tt = Template->new({
     STASH => Template::Stash::ForceUTF8->new,
