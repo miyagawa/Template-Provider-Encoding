@@ -1,7 +1,7 @@
 package Template::Provider::Encoding;
 
 use strict;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use base qw( Template::Provider );
 use Encode;

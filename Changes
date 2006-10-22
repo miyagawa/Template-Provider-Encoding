@@ -1,5 +1,9 @@
 Revision history for Perl extension Template::Provider::Encoding
 
+0.07  Sun Oct 22 21:41:03 JST 2006
+        - Added dependency for Template-Toolkit
+          (Thanks to Andreas Koenig)
+
 0.06  Sun Oct 22 21:11:38 JST 2006
         - Skip obj.t test if Template::Stash::XS is not available
 
