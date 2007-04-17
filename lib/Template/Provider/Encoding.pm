@@ -1,22 +1,38 @@
 package Template::Provider::Encoding;
 
 use strict;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use base qw( Template::Provider );
 use Encode;
+
+sub _init {
+    my ($self, $params) = @_;
+
+    $self = $self->SUPER::_init($params);
+    $self->{DEFAULT_ENCODING} = $params->{DEFAULT_ENCODING} || 'utf8';
+    $self->{ENCODE_CHECK}     = $params->{ENCODE_CHECK} || Encode::FB_DEFAULT;
+    return $self;
+}
 
 sub _load {
     my $self = shift;
     my($data, $error) = $self->SUPER::_load(@_);
 
     unless (Encode::is_utf8($data->{text})) {
-        my $encoding = $data->{text} =~ /^\[% USE encoding '([\w\-]+)'/
-            ? $1 : 'utf-8';
-        $data->{text} = Encode::decode($encoding, $data->{text});
+        my $decoder = $self->detect_encoding($data);
+        $data->{text} = $decoder->decode($data->{text}, $self->{ENCODE_CHECK});
     }
 
     return ($data, $error);
+}
+
+sub detect_encoding {
+    my ($self, $data) = @_;
+
+    my $encoding = $data->{text} =~ /^\[% USE encoding '([\w\-]+)'/
+        ? $1 : $self->{DEFAULT_ENCODING};
+    return Encode::find_encoding($encoding);
 }
 
 1;
