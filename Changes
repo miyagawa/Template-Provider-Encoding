@@ -1,6 +1,6 @@
 Revision history for Perl extension Template::Provider::Encoding
 
-0.08  Tue Apr 17 13:52:40 PDT 2007
+0.08  Tue Apr 17 13:52:41 PDT 2007
         - Applied patch http://www.cpanforum.com/posts/2177 so the
           default encoding other than 'utf-8' can be set
           (Thanks to Nobuaki ITO)
