@@ -1,7 +1,7 @@
 package Template::Provider::Encoding;
 
 use strict;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use base qw( Template::Provider );
 use Encode;
@@ -18,6 +18,8 @@ sub _init {
 sub _load {
     my $self = shift;
     my($data, $error) = $self->SUPER::_load(@_);
+
+    return ($data, $error) unless defined $data;
 
     unless (Encode::is_utf8($data->{text})) {
         my $decoder = $self->detect_encoding($data);

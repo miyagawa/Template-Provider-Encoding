@@ -1,5 +1,8 @@
 Revision history for Perl extension Template::Provider::Encoding
 
+0.10  Tue Jul 31 23:53:58 PDT 2007
+        - Fixed warning issue. RT 27645
+
 0.09  Wed Apr 18 14:49:48 PDT 2007
         - Added Encode.pm to prereq
 
